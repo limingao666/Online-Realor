@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>MyHouseMyDream</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="logo.jpg" type="image/gif" rel="shortcut icon"/>
+<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">DreamHome</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#sell">For Sell</a></li>
+                <li><a href="#rent">For Rent</a></li>
+                <li><a href="#list">Watch List</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#agentModal" data-toggle="modal" data-target="#agentModal">
+                <span class="glyphicon glyphicon-log-in"></span> Agent Login</a></li>
+                <li><a href="#buyerModal" data-toggle="modal" data-target="#buyerModal">
+                <span class="glyphicon glyphicon-log-in"></span> Buyer Login</a></li>
+                <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            </ul>
+              
+            <!-- Modal Agent Login-->
+            <div class="modal fade" id="agentModal" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Agent Login</h4>
+                        </div>
+                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                            <div class="well">
+                                <form class="form-horizontal" id="buyerLoginForm">
+                                    <div class="form-group">
+                                        <label for="usernameA" class="control-label">User Name</label>
+                                        <input class="form-control" type="text" name="usernameB" id="usernameB" aria-describedby="basic-addon1" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordA" class="control-label">Password</label>
+                                        <input class="form-control" type="password" name="passwordB" id="passwordB" aria-describedby="basic-addon1" placeholder="Password">
+                                    </div>
+                                </form>
+                            </div>
+                            <p>If you are a new user, please go to sign up page</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Modal Buyer Login-->
+            <div class="modal fade" id="buyerModal" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Buyer Login</h4>
+                        </div>
+                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                            <div class="well">
+                                <form class="form-horizontal" id="buyerLoginForm">
+                                    <div class="form-group">
+                                        <label for="usernameB" class="control-label">User Name</label>
+                                        <input class="form-control" type="text" name="usernameB" id="usernameB" aria-describedby="basic-addon1" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordB" class="control-label">Password</label>
+                                        <input class="form-control" type="password" name="passwordB" id="passwordB" aria-describedby="basic-addon1" placeholder="Password">
+                                    </div>
+                                </form>
+                            </div>
+                            <p>If you are a new user, please go to sign up page</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
+              <div id="carousel" class="carousel slide">
+                  <ol class="carousel-indicators">
+                      <li data-target="#carousel" data-slide-to="0" class=""> </li>
+                      <li data-target="#carousel" data-slide-to="1" class="active"> </li>
+                      <li data-target="#carousel" data-slide-to="2" class=""> </li>
+                  </ol>
+              <div class="carousel-inner">
+                  <div class="item"> 
+                      <img class="homePic" src="homePic1.jpg">
+                  </div>
+                  <div class="item active"> 
+                      <img class="homePic" src="homePic2.jpg" >
+                  </div>
+                  <div class="item"> 
+                      <img class="homePic" src="homePic3.jpg" >
+                  </div>
+              </div>
+                  <a class="left carousel-control" href="#carousel" data-slide="prev"><span class="icon-prev"></span></a> 
+                  <a class="right carousel-control" href="#carousel" data-slide="next"><span class="icon-next"></span></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12" id="mainDivision">
+                <div class="row" id="propertyData1"></div>
+                <div class="row" id="propertyData2"></div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
+                <div class="well">
+                    <h3 class="text-center">Find Your Home</h3>
+                    <!--   <form class="form-horizontal"  id="searchForm">-->
+                    <div class="form-group">
+                        <label for="location1" class="control-label">Location</label>
+                        <select class="form-control" name="" id="location1"></select>
+                    </div>
+                    <button class="btn btn-danger" onclick="searchStart();">Search</button>
+                      <!--</form>-->
+                    <hr>
+                    <div id="srchResult">
+                        <h4 class="text-center">Search Results</h4><br>
+                        <table id="searchList"></table>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="text-center">Agents</h3>
+                <div class="media-object-default" id="agentDetails"></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container well" id="contact">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+            <span class="text-right"> </span>
+                <h3>Contact Us</h3>
+                <hr>
+                <address>
+                    <strong>DreamHome, Inc.</strong><br>
+                    800 West Renner Road, Richardson, TX - 75080<br>
+                    <abbr title="Phone">P:</abbr> (469) 803-0913
+                </address>
+                <address>
+                    <strong>Megha Agrawal</strong><br>
+                    <a href="mailto:#">bxz170930@utdallas.edu</a>
+                </address>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer class="text-center">
+       <div class="container">
+          <div class="row">
+              <div class="col-xs-12">
+                <p>Copyright © DreamHome. All rights reserved.</p>
+              </div>
+          </div>
+        </div>
+    </footer>
+
+</body>
+</html>
