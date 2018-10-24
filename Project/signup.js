@@ -1,17 +1,72 @@
 $(document).ready( function(){//simple validation at client's end
+    
+    var username;
+    var email;
+
+    $("#username1").on("blur", function() {
+        // body...
+        username = $("#username1").val();
+        $.ajax({
+            type:"post",
+            url:"signupCheck.php",
+            data:{"username1": username},
+            success:function(response)
+            {
+                if(response == "OK")
+                {
+                    $("#info1").text("Username available");
+                }
+                else
+                {
+                    $("#info1").text("Username already exists. Please enter a new username");
+                }
+            }
+
+        });
+
+    });
+
+    $("#email1").on("blur", function(){
+        email = $("#email1").val();
+        $.ajax({
+            type:"post",
+            url:"signupCheck.php",
+            data:{"email1": email},
+            success:function(response)
+            {
+                if(response == "OK")
+                {
+                    $("#info2").text("Email available");
+                }
+                else
+                {
+                    $("#info2").text("Email already exists. Please enter a new email");
+                }
+            }
+
+        });
+    });
+
     $( "button" ).click(function(event){ //on form submit 
 
         var error_free = true;
-        var username = $("#username1").val();
+        name = $("#username1").val();
+        email = $("#email1").val();
         var psw = $("#password1").val();
         var pswConfirm = $("#confirmpwd1").val();
         var fname = $("#fname1").val();
         var lname = $("#lname1").val();
-        var email = $("#email1").val();
+        
 
         if(username == ""){
             $("#username1").addClass("error");
             alert("Please enter your username");
+            error_free = false;
+        }
+
+        if(email == ""){
+            $("#email1").addClass("error");
+            alert("Please enter your Email Address");
             error_free = false;
         }
 
@@ -20,28 +75,11 @@ $(document).ready( function(){//simple validation at client's end
             alert("Invalid Password");
             error_free = false;
         }
-        else if(!psw.match(/[a-z]/))
+        else if(!psw.match(/[a-zA-Z]/)  || !psw.match(/[0-9]/))
         {
-        	alert("Contain special characters");
+        	alert("Invalid password");
         	error_free = false;
         }
-        else if(!psw.match(/[A-Z]/))
-        {
-        	alert("Contain special characters");
-        	error_free = false;
-        }
-        else if(!psw.match(/[0-9]/))
-        {
-        	alert("Contain special characters");
-        	error_free = false;
-        }
-
-        if(pswConfirm == ""){
-            $("#confirmpwd1").addClass("error");
-            alert("Please enter Password again");
-            error_free = false;
-        }
-
 
         if(!(psw).match(pswConfirm)){
             $("#pswConfirm").addClass("error");
@@ -58,12 +96,6 @@ $(document).ready( function(){//simple validation at client's end
         if(lname == ""){
             $("#lname1").addClass("error");
             alert("Please enter your Last Name");
-            error_free = false;
-        }
-
-        if(email == ""){
-            $("#email1").addClass("error");
-            alert("Please enter your Email Address");
             error_free = false;
         }
 
@@ -91,15 +123,5 @@ $(document).ready( function(){//simple validation at client's end
         //$("input").css('border-color',''); 
         $("#result").slideUp();
     });
-
-    $.ajax({
-    	type:"post",
-    	url:"signup.php",
-    	data:{"username1": username, "email1": email},
-    	success:function(response)
-    	{
-    		$("You are successfully signed in");
-    	}
-
-    });
+    
 });
