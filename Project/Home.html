@@ -35,75 +35,80 @@
             </ul>
               
             <!-- Modal Agent Login-->
-            <div class="modal fade" id="agentModal" role="dialog">
-                <div class="modal-dialog">
-        
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Agent Login</h4>
-                        </div>
-                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
-                            <div class="well">
-                                <form class="form-horizontal" id="buyerLoginForm">
-                                    <div class="form-group">
-                                        <label for="usernameA" class="control-label">User Name</label>
-                                        <input class="form-control" type="text" name="usernameA" id="usernameA" aria-describedby="basic-addon1" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="passwordA" class="control-label">Password</label>
-                                        <input class="form-control" type="password" name="passwordA" id="passwordA" aria-describedby="basic-addon1" placeholder="Password">
-                                    </div>
-                                </form>
+            <div class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                <div class="modal fade" id="agentModal" role="dialog">
+                    <div class="modal-dialog">
+            
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Agent Login</h4>
                             </div>
-                            <p>If you are a new user, please go to sign up page</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Sign In</button>
+                            <div class="modal-body">
+                                <div class="well">
+                                    <form class="form-horizontal" id="agentLoginForm">
+                                        <div class="form-group">
+                                            <label for="usernameA" class="control-label">User Name</label>
+                                            <input class="form-control" type="text" name="usernameA" id="usernameA" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passwordA" class="control-label">Password</label>
+                                            <input class="form-control" type="password" name="passwordA" id="passwordA" placeholder="Password">
+                                        </div>
+                                    </form>
+                                </div>
+                                <p>If you are a new user, please go to sign up page</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Sign In</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
 
           <!-- Modal Buyer Login-->
-            <div class="modal fade" id="buyerModal" role="dialog">
-                <div class="modal-dialog">
-        
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Buyer Login</h4>
-                        </div>
-                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
-                            <div class="well">
-                                <form class="form-horizontal" id="buyerLoginForm">
-                                    <div class="form-group">
-                                        <label for="usernameB" class="control-label">User Name</label>
-                                        <input class="form-control" type="text" name="usernameB" id="usernameB" aria-describedby="basic-addon1" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="passwordB" class="control-label">Password</label>
-                                        <input class="form-control" type="password" name="passwordB" id="passwordB" aria-describedby="basic-addon1" placeholder="Password">
-                                    </div>
-                                </form>
+           <div class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+               <div class="modal fade" id="buyerModal" role="dialog">
+                    <div class="modal-dialog">
+            
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Buyer Login</h4>
                             </div>
-                            <p>If you are a new user, please go to sign up page</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Sign In</button>
+                            <div class="modal-body" >
+                                <div class="well">
+                                    <form class="form-horizontal" id="buyerLoginForm">
+                                        <div class="form-group">
+                                            <label for="usernameB" class="control-label">User Name</label>
+                                            <input class="form-control" type="text" name="usernameB" id="usernameB" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passwordB" class="control-label">Password</label>
+                                            <input class="form-control" type="password" name="passwordB" id="passwordB" placeholder="Password">
+                                        </div>
+                                    </form>
+                                </div>
+                                <p>If you are a new user, please go to sign up page</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Sign In</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+           </div>
 
         </div>
     </nav>
 
-    <div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel slide" data-ride="carousel">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
               <div id="carousel" class="carousel slide">
@@ -114,13 +119,13 @@
                   </ol>
               <div class="carousel-inner">
                   <div class="item"> 
-                      <img class="homePic" src="homePic1.jpg">
+                      <img class="homePic" src="homePic1.jpg" alt="exmaple">
                   </div>
                   <div class="item active"> 
-                      <img class="homePic" src="homePic2.jpg" >
+                      <img class="homePic" src="homePic2.jpg" alt="exmaple">
                   </div>
                   <div class="item"> 
-                      <img class="homePic" src="homePic3.jpg" >
+                      <img class="homePic" src="homePic3.jpg" alt="exmaple">
                   </div>
               </div>
                   <a class="left carousel-control" href="#carousel" data-slide="prev"><span class="icon-prev"></span></a> 
@@ -143,7 +148,7 @@
                     <!--   <form class="form-horizontal"  id="searchForm">-->
                     <div class="form-group">
                         <label for="location1" class="control-label">Location</label>
-                        <select class="form-control" name="" id="location1"></select>
+                        <select class="form-control" id="location1"></select>
                     </div>
                     <button class="btn btn-danger" onclick="searchStart();">Search</button>
                       <!--</form>-->
