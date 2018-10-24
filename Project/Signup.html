@@ -11,24 +11,119 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Home.html">DreamHome</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#sell">For Sell</a></li>
+                <li><a href="#rent">For Rent</a></li>
+                <li><a href="#list">Watch List</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#agentModal" data-toggle="modal" data-target="#agentModal">
+                <span class="glyphicon glyphicon-log-in"></span> Agent Login</a></li>
+                <li><a href="#buyerModal" data-toggle="modal" data-target="#buyerModal">
+                <span class="glyphicon glyphicon-log-in"></span> Buyer Login</a></li>
+                <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            </ul>
+            <!-- Modal Agent Login-->
+            <div class="modal fade" id="agentModal" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Agent Login</h4>
+                        </div>
+                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                            <div class="well">
+                                <form class="form-horizontal" id="agentLoginForm">
+                                    <div class="form-group">
+                                        <label for="usernameA" class="control-label">User Name</label>
+                                        <input class="form-control" type="text" name="usernameA" id="usernameA" aria-describedby="basic-addon1" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordA" class="control-label">Password</label>
+                                        <input class="form-control" type="password" name="passwordA" id="passwordA" aria-describedby="basic-addon1" placeholder="Password">
+                                    </div>
+                                </form>
+                            </div>
+                            <p>If you are a new user, please go to sign up page</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Modal Buyer Login-->
+            <div class="modal fade" id="buyerModal" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Buyer Login</h4>
+                        </div>
+                        <div class="modal-body" class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                            <div class="well">
+                                <form class="form-horizontal" id="buyerLoginForm">
+                                    <div class="form-group">
+                                        <label for="usernameB" class="control-label">User Name</label>
+                                        <input class="form-control" type="text" name="usernameB" id="usernameB" aria-describedby="basic-addon1" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordB" class="control-label">Password</label>
+                                        <input class="form-control" type="password" name="passwordB" id="passwordB" aria-describedby="basic-addon1" placeholder="Password">
+                                    </div>
+                                </form>
+                            </div>
+                            <p>If you are a new user, please go to sign up page</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
 	<div class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
 		<h1><strong>Sign Up</strong></h1>
 	    <p><strong>Please fill in this form to create an account!</strong></p>
 	    <hr>
 
-	    <form action="" method="post" id="signupform" novalidate action="signup.php">
+	    <form method="POST" id="signupForm" action="signupInsert.php">
 	       
 	        <div class="form-group">
 	        	<label for="username1" class="control-label">User Name</label>
 	            <input id="username1" type="text" class="form-control" placeholder="Username" name="username1" required="true">
-	            <span id="name_status"></span>
+	            <span id="info1"></span>
+	        </div>
+
+	        <div class="form-group">
+		       	<label for="email1" class="control-label">Email</label>
+	            <input id="email1" type="email" class="form-control" placeholder="Email" name="email1" required="true">
+	            <span id="info2"></span>
 	        </div>
 
 	        <div class="form-group">
 	        	<label for="password1" class="control-label">Password</label>
 	            <input id="password1" type="password" class="form-control" placeholder="Password" name="password1" required="true">
 	        </div>
-	        <h6>*Password must be strictly alphanumeric and should be 6 characters long</h6>
+	        <h6>*Password must be strictly alphanumeric and at least 6 characters long and should contain at least 1 digital number and 1 character </h6>
 
 	        <div class="form-group">
 	        	<label for="confirmpwd1" class="control-label">Confirm Password</label>
@@ -46,12 +141,6 @@
 	            <input id="lname1" type="text" class="form-control" placeholder="Last Name" name="lname1" required="true">
 	        </div>
 
-	       <div class="form-group">
-		       	<label for="email1" class="control-label">Email</label>
-	            <input id="email1" type="email" class="form-control" placeholder="Email" name="email1" required="true">
-	            <span id="email_status"></span>
-	        </div>
-
 	        <div class="form-group">
 			    <label for="agentBuyer1" class="control-label">Are you an agent?</label>
 				<div class="radio">
@@ -66,10 +155,9 @@
 	            <input type="checkbox" class="form-check-input" id="check">
 	            <label class="form-check-label" for="check"> I accept the <a href="#" style="color: dodgerblue"> Terms of Use & Privacy Policy</label></br></br>
 	        </div>
-	        <button type="submit" class="btn btn-primary">Sign Up</button>
+	        <button type="submit" class="btn btn-primary" name="submit" id="submit">Sign Up</button>
 	    </form>
 	</div>
-	
 
 </body>
 </html>
