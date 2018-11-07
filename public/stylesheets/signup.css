@@ -1,0 +1,23 @@
+p{
+	color: grey;
+}
+
+h1, p{
+	text-align: center;
+}
+
+input[type=text], input[type=email], input[type=password]{
+	background-color: #F8F8FF;
+	padding: 10px;
+	display: inline-block;
+}
+
+hr{
+	border: 1px solid;
+	margin-left: 20px;
+	color: #F1F1F1;
+}
+
+.error{
+	border-color: red;
+}

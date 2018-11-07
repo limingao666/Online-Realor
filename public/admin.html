@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BuyerPgae</title>
+	<title>Sign Up</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="images/logo.jpg" type="image/gif" rel="shortcut icon"/>
+    <script type="text/javascript" src="javascripts/admin.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collp" aria-expanded="false"> 
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span> <span class="icon-bar"></span> 
+                <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="Home.html">DreamHome</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="collp">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#list">Watch List</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li> <a href="#postModal" data-toggle="modal" data-target="#postModal"> Add New</a></li>
+                </ul>
+            </div> 
+                       
+            <!-- Modal Add new-->
+            <div class="col-lg-4 col-md-6 col-md-offset-4 col-lg-offset-4">
+                <div class="modal fade" id="postModal" role="dialog">
+                    <div class="modal-dialog">
+            
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add New</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="well">
+                                    <form method="post" id="postForm">
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-12">
+                                                <label>Street</label>
+                                                <input class="form-control" id="inputStreet" placeholder="1234 Main St">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-5">
+                                                <label for="inputCity">City</label>
+                                                <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState">State</label>
+                                                <input type="text" class="form-control" id="inputState">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputZip">Zip</label>
+                                                <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputStatus">Status</label>
+                                                <select id="inputStatus" class="form-control">
+                                                    <option value="statusRent">Rent</option>
+                                                    <option value="statusSell">Sell</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputTitle">Title</label>
+                                                <select class="form-control" id="inputType">
+                                                    <option value="apartment">Apartment</option>
+                                                    <option value="house">House</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputBedrooms">Bedrooms</label>
+                                                <input type="text" class="form-control" id="inputBedrooms">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputBathrooms">Bathrooms</label>
+                                                <input type="text" class="form-control" id="inputBathrooms">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputSalePrice">Price</label>
+                                                <input type="text" class="form-control" id="inputPirce">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputBuiltYear">Built year</label>
+                                                <input type="text" class="form-control" id="inputBuiltYear">
+                                            </div>
+                                        </div>  
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputSize">Size</label>
+                                                <input type="text" class="form-control" id="inputSize">
+                                            </div>
+                                        </div>  
+                                        <div class="form-group row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputPicture">Picture</label>
+                                                <mean-upload file-dest="'../images/'" upload-file-callback ="uploadFileCallback"></mean-upload>
+                                                <div data-ng-repeat="img in images">
+                                                    <img data-ng-src="{{img.src}}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="button" class="btn btn-primary" value="Save" id="saveBtn"></input>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="container" id="list">
+        <div class="row" id="prop"></div>
+    </div>
+
+    <div class="container">
+	    <div class="row">
+		    <!-- My Favorites-->
+			<div class="col-lg-12 col-md-6 col-md-offset-3 col-lg-offset-0">
+				<h3 class="text-center">My Favorites</h3>
+		        <div class="media-object-default">
+			        <div class="media">
+				        <div class="media-body">
+							<em id="msg" class="text-center">You have no items added as favorites</em>
+							<table id="favList"></table>
+				        </div>
+                    </div>
+	            <hr>
+	            <br>
+	        </div>
+	    </div>
+	</div>
+
+    <div class="container">
+        <div class="col-lg-12 col-md-6">
+            
+            <h3 class="text-center">Find Your Home</h3>
+            <!--   <form class="form-horizontal"  id="searchForm">-->
+            <div class="form-group">
+                <label for="location1" class="control-label">Location</label>
+                <input type="text" class="form-control" id="location1"></input>
+            </div>
+            <button class="btn btn-primary" id="search">Search</button>
+            <button class="btn btn-primary" id="showAll">Show all</button>
+              <!--</form>-->
+            <hr>
+            <div id="srchResult">
+                <h4 class="text-center">Search Results</h4><br/>
+                <div id="res1"></div>
+                <div id="res2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-lg-12 col-md-6">
+            <h3 class="text-center">Agents</h3>
+            <div class="text-center" id="agentDetails"></div>
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <span class="text-left"></span>
+                <h3>Contact Us</h3>
+                <hr>
+                <address>
+                    <strong>DreamHome, Inc.</strong><br>
+                    800 West Renner Road, Richardson, TX - 75080<br>
+                    <abbr title="Phone">P:</abbr> (469) 803-0913
+                </address>
+                <address>
+                    <strong>Megha Agrawal</strong><br>
+                    <a href="mailto:#">xxx.xx@gmail.com</a>
+                </address>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer class="text-center">
+       <div class="container">
+          <div class="row">
+              <div class="col-xs-12">
+                <p>Copyright © DreamHome. All rights reserved.</p>
+              </div>
+          </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
